@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto1_Adrian.MVVM.View.TareasDetalladasView"
+             Title="TareasDetalladasView">
+    <StackLayout Padding="20" Spacing="20">
+        <Label Text="Nombre de la tarea:" FontSize="18" />
+        <Entry x:Name="entryNombre"  Text="{Binding Nombre}" FontSize="18" />
+
+        <Label Text="Descripcion:"/>
+        <Entry x:Name="entryDescripcion" Text="{Binding Descripcion}"/>
+
+        <Label Text="¿Completada?" FontSize="18" />
+        <Switch x:Name="switchCompletada" IsToggled="{Binding Completada}" />
+        
+
+
+        <Button Text="Guardar" Clicked="Button_Clicked"/>
+       
+    </StackLayout> 
+</ContentPage>

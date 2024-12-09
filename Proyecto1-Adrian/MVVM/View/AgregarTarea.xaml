@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto1_Adrian.MVVM.View.AgregarTarea"
+             Title="AgregarTarea">
+    <VerticalStackLayout>
+        <Label Text="Tarea"/>
+        <Entry x:Name="entryNombre" Text="{Binding Nombre}" FontSize="18" />
+        <Label Text="descripcion"/>
+        <Entry x:Name="entryDescripcion" Text="{Binding Descripcion}"/>
+        <Label Text="completada"/>
+        <Switch   IsToggled="{Binding Completada}" 
+                  IsEnabled="False"
+                  x:Name="switchCompletada"/>
+        <Button Text="Guardar"
+                Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+
+</ContentPage>

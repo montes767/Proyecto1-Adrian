@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto1_Adrian.MVVM.ListaTareasView"
+             Title="ListaTareasView">
+    <CollectionView x:Name="collectionView" 
+                    ItemsSource="{Binding listaTareas}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnSelectionChanged">
+        <CollectionView.ItemsLayout >
+            <GridItemsLayout Orientation="Vertical" Span="2"/>
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding nombre}" 
+                               FontSize="Subtitle"
+                               HorizontalOptions="Center"
+                               TextColor="Aqua"
+                               />
+                        <CheckBox IsChecked="{Binding completada}"
+                                  HorizontalOptions="Center"/>
+                        <Button Text="Borrar"
+                                BackgroundColor="Red"
+                                TextColor="White"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.deleteComand}"
+                                CommandParameter="{Binding .}"/>
+
+                    </VerticalStackLayout>
+                    
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Header>
+            <Button Text="Añadir tarea" Clicked="Button_Clicked"/>
+        </CollectionView.Header>
+    </CollectionView>
+</ContentPage>
